@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+  server:
+    image: gitea/gitea:latest
+    restart: always
+    volumes:
+      - ./data:/var/lib/gitea
+      - ./config:/etc/gitea
+        # 时区设置
+        # - /etc/timezone:/etc/tiddmezone:ro
+        # - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "80:3000"
+      - "2222:2222"

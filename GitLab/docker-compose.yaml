@@ -1,0 +1,35 @@
+version: '3.6'
+services:
+  web:
+    image: 'registry.gitlab.cn/omnibus/gitlab-jh:latest'
+    restart: always
+    hostname: 'git.030399.xyz'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+              external_url 'http://g.030399.xyz'
+        # Add any other gitlab.rb configuration here, each on its own line
+    ports:
+      - '13001:80'
+        # - '13002:443'
+        # - '13003:22'
+    volumes:
+      - './config:/etc/gitlab'
+      - './logs:/var/log/gitlab'
+      - './data:/var/opt/gitlab'
+    # 最大内存使用量
+    shm_size: '2048m'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

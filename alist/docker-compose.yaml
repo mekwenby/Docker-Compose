@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+    alist:
+        restart: always
+        volumes:
+            - './alist:/opt/alist/data'
+        ports:
+            - '5244:5244'
+        environment:
+            - PUID=0
+            - PGID=0
+            - UMASK=022
+        # 容器名称
+        container_name: alist
+        # 版本号自定
+        image: 'xhofe/alist-aria2:v3.29.1'
+

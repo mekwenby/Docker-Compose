@@ -1,0 +1,18 @@
+# This is just an example. Customize it to your needs.
+
+version: "3"
+services:
+  navidrome:
+    image: deluan/navidrome:latest
+    restart: always
+    ports:
+      - "4533:4533"
+    environment:
+      ND_SCANSCHEDULE: 1m
+      ND_LOGLEVEL: info  
+      ND_BASEURL: ""
+      ND_ENABLETRANSCODINGCONFIG: "true"
+      ND_IMAGECACHESIZE: "3000M"
+    volumes:
+      - ./data:/data
+      - ./music:/music:ro

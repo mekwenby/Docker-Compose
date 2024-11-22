@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  test2:
+    networks:
+      back:
+        ipv4_address: '192.168.1.92'
+    image: nginx
+    # command: ['ping','192.168.1.1']
+
+networks:
+  back:
+    driver: macvlan
+    driver_opts:
+      parent: eno1
+    ipam:
+      config:
+        - subnet: '192.168.1.0/24'
+          gateway: '192.168.1.1'
+

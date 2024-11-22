@@ -1,0 +1,13 @@
+version: '3'
+services:
+  lanproxy-server:
+    image: franklin5/lanproxy-server
+    container_name: lanproxy-server
+    ports:
+      - "49080:8090"
+      - "4900:4900"
+      - "49001-49070:49001-49070"
+    restart: always
+    environment:
+      - LANPROXY_USERNAME=user
+      - LANPROXY_PASSWORD=passwd

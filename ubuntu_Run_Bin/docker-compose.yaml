@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  ubuntu_container:
+    image: ubuntu:22.04
+    volumes:
+      - "./:/main"
+    working_dir: /main
+    ports:
+      - "1080:1080"
+      - "8080:8080"
+    command: bash -c "./main"
+    container_name: binary-program
+    restart: always

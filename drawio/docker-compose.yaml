@@ -1,0 +1,13 @@
+version: '3'
+services:
+  drawio:
+    image: jgraph/drawio:22.0.8
+    container_name: draw
+    ports:
+      - "65430:8080"
+     # - "443:8443"
+    volumes:
+      - ./drawiodata/letsencrypt-log:/var/log/letsencrypt/
+      - ./drawiodata/letsencrypt-etc:/etc/letsencrypt/
+      - ./drawiodata/letsencrypt-lib:/var/lib/letsencrypt
+    restart: always

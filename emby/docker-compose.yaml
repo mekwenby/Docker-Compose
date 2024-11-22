@@ -1,0 +1,21 @@
+version: "2.1"
+
+services:  
+  emby:
+    image: linuxserver/emby:4.7.14
+    container_name: emby
+    environment:
+      - TZ=Asia/Shanghai  # 时区设置
+    volumes:
+      -  ./library:/config
+      -  ./tvshows:/data/tvshows
+      -  ./movies:/data/movies
+    devices:
+      - /dev/dri:/dev/dri # optional
+
+
+    ports:
+      - 8096:8096
+  #   - 8920:8920 # optional
+    restart: unless-stopped
+

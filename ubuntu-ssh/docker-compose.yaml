@@ -1,0 +1,28 @@
+# docker-compose.yml
+version: '3'
+services:
+  web-server1:
+    build:
+      context: .  # Dockerfile 所在目录
+    image: mek/ubuntu_ssh:beta
+    ports:
+      - "31022:22"  # 映射容器 22 端口到主机的 31022 端口
+      - "31080:80"
+      - "31081:81"
+      - "31066:3306"
+      - "31800:8080"
+
+    container_name: ubuntu_ssh_server1
+
+  web-server2:
+    build:
+      context: .  # Dockerfile 所在目录
+    image: mek/ubuntu_ssh:beta
+    ports:
+      - "32022:22"  # 映射容器 22 端口到主机的 32022 端口
+      - "32080:80"
+      - "32081:81"
+      - "32066:3306"
+      - "32800:8080"  
+    container_name: ubuntu_ssh_server2
+

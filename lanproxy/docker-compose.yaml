@@ -1,0 +1,10 @@
+version: '3'
+services:
+  lanproxy-client:
+    image: franklin5/lanproxy-client
+    container_name: lanproxy-client
+    environment:
+      - LANPROXY_KEY=keys
+      - LANPROXY_HOST=hostnamee
+    restart: always
+
