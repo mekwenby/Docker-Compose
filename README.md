@@ -4,6 +4,9 @@
 #### 导航页
 [heimdall](heimdall)
 
+#### Web服务器
+[nginx](nginx)
+
 #### 网盘
 [alist](alist)
 [nextcloud](nextcloud)
@@ -23,6 +26,7 @@
 [mongo](mongo)
 [mariadb + phpmyadmin](mariadb%20%2B%20phpmyadmin)
 [mysql+phpmyadmin](mysql%2Bphpmyadmin)
+[redis](redis)
 
 #### 多媒体
 [navidrome](navidrome)
